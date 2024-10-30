@@ -13,7 +13,7 @@ cd Smartfalcon_repo
 curl -sSL https://bit.ly/2ysbOFE | bash -s -- 2.5.0
 
 **Go to Fabric Test Network Directory:**<br>
-cd fabric-samples/test-network
+cd Smartfalcon_repo/test-network
 
 Down the Existing Network: <br>
 ./network.sh down
