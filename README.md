@@ -6,7 +6,7 @@
 
 Then
 
-**Navigate to Your Project Directory:**
+**Navigate to Your Project Directory:** <br>
 cd Smartfalcon_repo 
 
 **Install Hyperledger Fabric: (by using below command)**
