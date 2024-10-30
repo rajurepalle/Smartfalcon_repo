@@ -41,3 +41,24 @@ npm i
 npm start
 
 **"The server should start at http://localhost:3000."**
+
+Now we can access the API endpoints to invoke Smart Contracts deplyed in fabric channel!
+
+***Now Go to postman *** <br>
+
+GET http://localhost:3000/data
+
+
+Response : (We get data in the ledger)
+
+            {
+                ID: 'DATA1',
+                DEALERID: 'dealer1',
+                MSISDN: '9999999999',
+                MPIN: '1234',
+                BALANCE: 3120,
+                STATUS: 'active',
+                TRANSAMOUNT: 1000,
+                TRANSTYPE: 'PRIVATE',
+                REMARKS: '',
+            }
