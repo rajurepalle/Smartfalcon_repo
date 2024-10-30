@@ -83,18 +83,18 @@ async function initializeFabric() {
 }
 
 
-app.get('/assets', async (req, res) => { 
+app.get('/data', async (req, res) => { 
     try {
         const resultBytes = await contract.evaluateTransaction('GetAllAssets');
         const result = JSON.parse(utf8Decoder.decode(resultBytes));
         res.json(result);
     } catch (error) {
-        console.error('Error fetching assets:', error);
+        console.error('Error fetching data:', error);
         res.status(500).json({ error: 'Failed contact to admin ', details: error.message });
     }
 });
 
-app.post('/asset', async (req, res) => {
+app.post('/Upload_data', async (req, res) => {
     const { id, dealerId, msisdn, mpin, balance, status, transAmount, transType, remarks } = req.body;
     if (!id || !dealerId || !msisdn || !mpin || balance === undefined || !status) {
         return res.status(400).json({ error: 'Pls Fill the required fields' });
@@ -120,7 +120,7 @@ app.post('/asset', async (req, res) => {
     }
 });
 
-app.put('/asset', async (req, res) => {
+app.put('/update_data', async (req, res) => {
     const { id, dealerId, msisdn, mpin, balance, status, transAmount, transType, remarks } = req.body;
     if (!id || !dealerId || !msisdn || !mpin || balance === undefined || !status) {
         return res.status(400).json({ error: 'Missing required fields' });
@@ -146,7 +146,7 @@ app.put('/asset', async (req, res) => {
     }
 });
 
-app.post('/asset/transfer', async (req, res) => {
+app.post('/data/transfer', async (req, res) => {
     const { id, newOwner } = req.body;
     try {
         const oldOwner = await contract.submitTransaction('TransferAsset', id, newOwner);
@@ -157,7 +157,7 @@ app.post('/asset/transfer', async (req, res) => {
     }
 });
 
-app.get('/asset/:id', async (req, res) => {
+app.get('/data/:id', async (req, res) => {
     const { id } = req.params;
     try {
    const resultBytes = await contract.evaluateTransaction('ReadAsset', id);
@@ -169,7 +169,7 @@ app.get('/asset/:id', async (req, res) => {
     }
 });
 
-app.get('/asset/:id/history', async (req, res) => {
+app.get('/data/:id/history', async (req, res) => {
     const { id } = req.params;
     try {
     const resultBytes = await contract.evaluateTransaction('GetAssetTransactionHistory', id);
