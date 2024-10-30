@@ -15,28 +15,18 @@ class AssetTransfer extends Contract {
     async InitLedger(ctx) {
         const assets = [
             {
-                ID: 'asset1',
+                ID: 'DATA1',
                 DEALERID: 'dealer1',
-            MSISDN: '1234567890',
+            MSISDN: '9999999999',
         
                 MPIN: '1234',
-              BALANCE: 300,
+              BALANCE: 3120,
                 STATUS: 'active',
-                TRANSAMOUNT: 0,
-                TRANSTYPE: '',
+                TRANSAMOUNT: 1000,
+                TRANSTYPE: 'PRIVATE',
                 REMARKS: '',
             },
-            {
-                ID: 'asset2',
-                DEALERID: 'dealer2',
-               MSISDN: '0987654321',
-                MPIN: '5678',
-                BALANCE: 400,
-        STATUS: 'active',
-                TRANSAMOUNT: 0,
-                TRANSTYPE: '',
-                REMARKS: '',
-            },
+            
         ];
 
         for (const asset of assets) {
