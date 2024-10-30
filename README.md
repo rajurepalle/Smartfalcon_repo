@@ -12,18 +12,15 @@ cd Smartfalcon_repo
 **Install Hyperledger Fabric: (by using below command)** <br><br>
 curl -sSL https://bit.ly/2ysbOFE | bash -s -- 2.5.0
 
-**Go to Fabric Test Network Directory:**<br><br>
-
+**Go to Fabric Test Network Directory:**<br>
 cd fabric-samples/test-network
 
-Down the Existing Network: <br><br>
-
+Down the Existing Network: <br>
 ./network.sh down
 
-**Start the Network Create a Channel b/w org1 peer1 & org2 peer1:** <br><br>
-
+**Start the Network Create a Channel b/w org1 peer1 & org2 peer1:** <br>
 sudo ./network.sh up createChannel
 
-**Deploy the Chaincode in peers: (Javascript)**: <br><br>
-
+**Deploy the Chaincode in peers: (Javascript)**: <br>
 ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript -ccl javascript
+
