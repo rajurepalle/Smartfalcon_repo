@@ -150,7 +150,7 @@ app.put('/update_data', async (req, res) => {
         res.json({ message: `Asset ${id} updated successfully` });
     } catch (error) {
         console.error('Error updating asset:', error);
-        res.status(500).json({ error: 'Failed to update asset you can refer veerendravamsi66@gmail.com', details: error.message });
+        res.status(500).json({ error: 'Failed to update asset ', details: error.message });
     }
 });
 
