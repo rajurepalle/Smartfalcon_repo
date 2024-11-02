@@ -17,6 +17,7 @@ const channelName = envOrDefault('CHANNEL_NAME', 'mychannel');
 const chaincodeName = envOrDefault('CHAINCODE_NAME', 'basic');
 const mspId = envOrDefault('MSP_ID', 'Org1MSP');
 
+// Path to crypto materials.
 const cryptoPath = envOrDefault(
     'CRYPTO_PATH',
     path.resolve(
@@ -31,6 +32,7 @@ const cryptoPath = envOrDefault(
     )
 );
 
+// Path to Private Keys directory.
 const keyDirectoryPath = envOrDefault(
     'KEY_DIRECTORY_PATH',
     path.resolve(
@@ -42,6 +44,7 @@ const keyDirectoryPath = envOrDefault(
     )
 );
 
+// Path to certificate directory 
 const certDirectoryPath = envOrDefault(
     'CERT_DIRECTORY_PATH',
     path.resolve(
@@ -53,15 +56,20 @@ const certDirectoryPath = envOrDefault(
     )
 );
 
+// Path to tls certificate.
 const tlsCertPath = envOrDefault(
     'TLS_CERT_PATH',
     path.resolve(cryptoPath, 'peers', 'peer0.org1.example.com', 'tls', 'ca.crt')
 );
 
+// Gateway peer endpoint.
 const peerEndpoint = envOrDefault('PEER_ENDPOINT', 'localhost:7051');
+
+// Gateway peer SSL host name override.
 const peerHostAlias = envOrDefault('PEER_HOST_ALIAS', 'peer0.org1.example.com');
 
 const utf8Decoder = new TextDecoder();
+//declared gateway and contract
 let gateway;
 let contract;
 
