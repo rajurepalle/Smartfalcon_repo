@@ -124,7 +124,7 @@ app.post('/Upload_data', async (req, res) => {
         res.json({ message: `Asset ${id} created successfully` });
     } catch (error) {
         console.error('Error creating asset:', error);
-        res.status(500).json({ error: 'Failed to create asset you can refer veerendravamsi66@gmail.com', details: error.message });
+        res.status(500).json({ error: 'Failed to create ', details: error.message });
     }
 });
 
@@ -173,7 +173,7 @@ app.get('/data/:id', async (req, res) => {
         res.json(result);
     } catch (error) {
   console.error('Error reading asset:', error);
-        res.status(500).json({ error: 'Failed to read asset you can refer veerendravamsi66@gmail.com', details: error.message });
+        res.status(500).json({ error: 'Failed to read asset assert', details: error.message });
     }
 });
 
