@@ -161,7 +161,7 @@ app.post('/data/transfer', async (req, res) => {
   res.json({ message: `Successfully transferred the asset ${id} from ${oldOwner} to ${newOwner}` });
     } catch (error) {
      console.error('Error transferring asset:', error);
-        res.status(500).json({ error: 'Failed to transfer asset you can refer veerendravamsi66@gmail.com' });
+        res.status(500).json({ error: 'Failed to transfer asset ' });
     }
 });
 
@@ -185,7 +185,7 @@ app.get('/data/:id/history', async (req, res) => {
         res.json(result);
     } catch (error) {
         console.error('Error fetching transaction history:', error);
-        res.status(500).json({ error: 'Failed to retrieve transaction history you can refer veerendravamsi66@gmail.com', details: error.message });
+        res.status(500).json({ error: 'Failed to retrieve transaction history you ', details: error.message });
     }
 });
 
